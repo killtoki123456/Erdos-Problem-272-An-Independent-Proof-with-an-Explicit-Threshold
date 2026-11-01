@@ -71,6 +71,10 @@ The following table records my independent research and the successive explicit 
 
 The dates in this table are my account of the research chronology. Public release dates and fixed proof versions will be recorded separately as materials are published.
 
+I retain ChatGPT conversation records, including their platform-recorded timestamps, as supporting documentation for this research chronology.
+
+The records and this repository are currently private; these dates describe research progress, not public disclosure. The first public release date will be recorded when the repository is made public.
+
 ## Proof materials and next steps
 
 The initial repository description records the precise theorem, its scope, related work, and the research chronology. The next publication steps are:
