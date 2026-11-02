@@ -1,105 +1,67 @@
 # Erdős Problem 272
 
-**English** | [简体中文](README.zh-CN.md)
+English** | [简体中文](README.zh-CN.md)
 
-Independently obtained results on the exact extremal value in [Erdős Problem #272](https://www.erdosproblems.com/272), with a current explicit threshold of **$N>4000$**.
+**Peihan Wu**
 
-The main result recorded here is
-
-$$
-t(N)=\binom{N}{2}+1+\left\lfloor\frac{N-1}{4}\right\rfloor
-\qquad (N>4000).
-$$
-
-**Status:** private research repository; work in progress. The author has carried out partial formalization, which remains unpublished. The proof manuscript and supporting materials are being prepared for publication; this README does not assert independent verification or a completed Lean formalization.
-
-## Problem and main result
-
-Write $[N]=\{1,\ldots,N\}$. A family $\mathcal F\subseteq\mathcal P([N])$ is admissible if, for every two distinct members $A,B\in\mathcal F$, the intersection $A\cap B$ is a nonempty arithmetic progression. Singletons and two-element sets count as arithmetic progressions. Members of $\mathcal F$ may be arbitrary subsets of $[N]$.
-
-Define
+This repository presents my research manuscript on [Erdős Problem 272](https://www.erdosproblems.com/272). The manuscript claims that, for every integer $N\ge4000$,
 
 $$
-t(N)=\max\{|\mathcal F|:\mathcal F\text{ is admissible on }[N]\},
-\qquad
-B(N)=\binom{N}{2}+1+\left\lfloor\frac{N-1}{4}\right\rfloor.
+t(N)=\binom N2+1+\left\lfloor\frac{N-1}{4}\right\rfloor.
 $$
 
-Here $t(N)$ is the maximum cardinality of an admissible family on $[N]$.
+Here $t(N)$ is the maximum size of a family of distinct subsets of $[N]=\{1,\ldots,N\}$ whose intersections of distinct members are nonempty arithmetic progressions. Singletons and pairs count as arithmetic progressions. Members themselves need not be progressions, and no common point is assumed. The stated range includes $N=4000$; the manuscript does not claim to settle all smaller parameters or classify every extremal family.
 
-**Main result.** For every integer $N>4000$, every admissible family on $[N]$ satisfies $|\mathcal F|\le B(N)$. Together with Szabó's matching construction, this gives $t(N)=B(N)$ throughout that range.
+## Paper and public materials
 
-The upper bound applies to all admissible families, with no assumption that their members share a common element. The threshold is strict: **$N>4000$, equivalently $N\ge4001$**.
+[Read the English paper (PDF)](erdos272_arxiv_en.pdf)
 
-This result covers the entire infinite tail above 4000. It does not by itself establish the exact formula for every positive integer $N$; the range $1\le N\le4000$ requires separate treatment.
+This repository currently publishes only the paper PDF and the English and Chinese READMEs. Code, computational certificates, technical source notes and Lean files are not distributed here. The paper still relies on electronic mathematical supplements and computational certificates, so the files currently public in this repository do not suffice to reproduce all computations or verify the entire chain of technical dependencies independently.
 
-## Independent discovery
+## Independent research declaration
 
-I obtained the eventual exact-value result independently on **24 October 2026** and subsequently reduced the explicit threshold to **$N>4000$ on 1 November 2026**. This work was developed independently of Li Xiang's related draft dated 30 October 2026.
+**I declare that I conducted and completed this research independently, without research dependence on Li Xiang's draft. That draft was not the source of my arguments or threshold improvements, and this research is not a continuation, adaptation or joint development of it.** Citations to that draft serve only to describe the publicly reported scope of concurrent work.
 
-The earlier stages of my work were not publicly posted at the time. The chronology below records when I obtained the results. I acknowledge the related public work below and make no claim here to first-publication priority.
+This declaration concerns my threshold-improvement research. Szabó's existing construction and the published results and methods of Yang and other authors retain their attribution in the paper. GPT assistance in research and review is disclosed below.
 
-I retain ChatGPT conversation records, including their platform-recorded timestamps, as supporting documentation for this research chronology.
+## Research timeline
 
-The records and this repository are currently private; these dates describe research progress, not public disclosure. The first public release date will be recorded when the repository is made public.
+The table records only the $N$ thresholds in my research records. These dates are distinct from first public disclosure and from completion of verification of each version.
 
-## Relation to existing work
+| Date | $N$ threshold |
+| --- | --- |
+| 2026-10-24 | $N\ge2^{252}$ |
+| 2026-10-25 | $N\ge2^{90}$ |
+| 2026-10-29 | $N\ge75000$ |
+| 2026-10-30 | $N\ge49000$ |
+| 2026-11-01 | $N\ge4000$ |
 
-The following comparison concerns mathematical statements and their ranges. It does not attribute proof methods or establish discovery priority. External results are summarized from the linked papers and author submissions.
+## Relationship to earlier work
 
-| Work | Result and scope | Relation to this project |
-| --- | --- | --- |
-| Szabó's construction, reproduced in [Yang, Theorem 1.2](https://arxiv.org/html/2607.23004v1) | $t(N)\ge B(N)$ for every $N\ge1$. | Supplies the known matching lower bound. No novelty is claimed here for that construction. |
-| [Zhanfu Yang, arXiv:2607.23004v1](https://arxiv.org/abs/2607.23004v1), submitted 25 July 2026 | Reports the exact maximum $B(N)$ for families sharing a common element, for every $N\ge1$, and unrestricted exact values for $3\le N\le12$. | This project's large-$N$ result has no common-element assumption. Yang's common-element result also covers smaller $N$. |
-| [Jensen Kohlmeyer and Liam Kruer, *A linear error bound for Erdős problem 272*](https://github.com/TheJustinSunPrize/awards/issues/4923) | Reports $t(N)=N^2/2+O(N)$ without a common-element assumption. | This project specifies the exact value for every $N>4000$. |
-| [Li Xiang's draft, PR #5513](https://github.com/TheJustinSunPrize/awards/pull/5513) | Paper dated 30 October 2026; PR opened 31 October. Reports $t(N)=B(N)$ for $N\ge642498$, with a simpler route for $N\ge2^{49}$. | The exact formula without a common-element assumption was obtained independently here, with the current smaller threshold $N>4000$. |
+Szabó supplied the matching lower-bound construction used here. [Zhanfu Yang's preprint](https://arxiv.org/abs/2607.23004v1) treats the common-point case, private pairs and staircase counting, and reports exact values for $3\le N\le12$. [Jensen Kohlmeyer and Liam Kruer](https://github.com/TheJustinSunPrize/awards/issues/4923) reported a linear error bound.
 
-Li Xiang's submission pins [lixiang90/Erdos272 at commit d5dc0e6](https://github.com/lixiang90/Erdos272/tree/d5dc0e6dbaaa954f8d89b05f72ed25cf6722be82). As of 1 November 2026, PR #5513 is a draft and does not claim organizer acceptance or independent human review.
+[Li Xiang's draft dated October 30, 2026, and its submission record](https://github.com/TheJustinSunPrize/awards/pull/5513) report the exact formula for $N\ge642498$. This manuscript claims the range $N\ge4000$. This comparison of ranges does not indicate that my research derives from that draft and does not adjudicate discovery priority. Detailed references and attribution appear in the paper.
 
-Relative to that draft's stated range, the result recorded here additionally covers every integer $4001\le N<642498$. This compares stated theorem ranges. This work was obtained independently of that draft.
+## Difficulties below 4000 and limitations of the method
 
-## Research chronology
+Further lowering the threshold below 4000 has remained difficult in my research. After extended work, I have only obtained further drafts concerning the 3800–4000 range. These drafts are not part of the current paper's result, and this repository does not claim a threshold of 3800.
 
-The following table records my independent research and the successive explicit thresholds. These are dates of research progress, distinct from the dates when proof artifacts become publicly available.
+In the present method, as $N$ grows, the gains supplied by structural restrictions can increasingly dominate boundary contributions, exceptional configurations and estimation errors. As $N$ becomes smaller, those losses occupy a larger share of the available margin, requiring finer structural estimates. Obtaining such estimates has proved difficult in my work.
 
-| Date | Milestone | Range |
-| --- | --- | --- |
-| 2026-10-24 | Eventual exact-value theorem, P062 | $N\ge2^{252}$ |
-| 2026-10-24 | Alternative eventual proof, P057 | $N\ge2^{2048}$ |
-| 2026-10-25 | Improved global threshold, P082 | $N\ge2^{90}$ |
-| 2026-10-29 | Improved explicit threshold | $N\ge75000$ |
-| 2026-10-30 | Further threshold improvement | $N\ge49000$ |
-| 2026-11-01 | Current threshold | $N>4000$ |
+I expect this structural-estimate approach may encounter substantial obstacles when $N$ is in the tens to hundreds. This is my assessment of the current method, rather than a theorem that small parameters are intrinsically harder or that the approach cannot be improved. Further progress may require new structural ideas, a more precise treatment of exceptions, or a different rigorous computational approach.
 
-The dates in this table are my account of the research chronology. Public release dates and fixed proof versions will be recorded separately as materials are published.
+## Lean formalization and GPT-assisted review
 
-## Formalization status
+Some Lean formalization has been completed, and the unfinished project remains work in progress. I am also considering whether to continue this route; I do not currently commit to completing a full formalization or to a completion date. The partial work has not been made public and is not used to justify any step of the present paper.
 
-I have also carried out partial formalization of this work. These materials are currently private and have not yet been publicly released.
+The manuscript has undergone GPT-assisted review of its arguments, dependency chain, citations and presentation. GPT also assisted with mathematical exploration, proof reconstruction and gap repair, implementation and manuscript preparation. This review is a tool-assisted check, not independent human peer review, complete proof-assistant verification or certification of correctness. The named human author remains responsible for the paper's contents.
 
-This is a record of partial progress, not a claim that the entire $N>4000$ theorem or the original problem has a complete publicly available formal proof. The precise statements covered, proof-assistant environment, dependencies, and verification evidence will be documented when the materials are released.
+## Collaboration, attribution and the Justin Sun Prize
 
-## Justin Sun Prize: attribution and award participation
+This work concerns [JSP-000233](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0201-0300.md#JSP-000233) and presents partial research results towards the original problem. Specific questions about the manuscript, research on the remaining parameters, independent checking and formalization contributions are welcome.
 
-This project concerns [JSP-000233](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0201-0300.md#JSP-000233), the Justin Sun Prize entry corresponding to Erdős Problem 272. I intend to seek recognition for my actual mathematical and formalization contributions under the applicable prize rules.
+If a later complete solution or prize submission materially relies on my results, please cite the specific statements and fixed version, identify my actual contribution alongside those of earlier authors and other contributors, and contact me through a GitHub issue. I would like to coordinate accurate attribution and discuss participation in a future joint application for qualifying contributions. Joint application roles, authorship and any proposed prize allocation should be discussed explicitly in advance, according to actual contributions and applicable rules.
 
-If a complete solution or a Justin Sun Prize submission materially relies on a theorem, proof, or formalization from this repository, I request that the contributors cite the specific result and version, identify what was used, notify me before submission, and give me a meaningful opportunity to participate in the contribution-attribution process and any award application for my own eligible contribution.
-
-Before sharing private proof or formalization materials for an award-related collaboration, I require a separate written agreement covering contribution attribution, application participation, and any proposed prize-sharing arrangements. Each contributor's role and any proposed share should be explicitly agreed; no fixed share is established by this README.
-
-Award eligibility and final recipient decisions remain subject to the official rules and organizer review. This statement records my contribution and collaboration expectations; it does not itself confer an award entitlement. The current $N>4000$ result alone does not cover the entire original problem. The current [submission guidelines](https://github.com/TheJustinSunPrize/awards/blob/main/CONTRIBUTING.md#external-solver-and-lean-submissions) require a complete solution to the original problem.
-
-For attribution and applications, see the official [contribution-attribution rules](https://github.com/TheJustinSunPrize/awards/blob/main/docs/attribution.md) and [award process](https://github.com/TheJustinSunPrize/awards/blob/main/docs/award-process.md). For team prize allocation and written confirmation, see [FAQ Q14](https://www.hejustinsun.com/prize/faq). Private agreements and payment details should remain outside the public repository.
-
-## Proof materials and next steps
-
-This initial README records the theorem, its scope, related work, and research chronology. The next publication steps are:
-
-- Publish the complete manuscript, including all hypotheses and the proof of the 4000 threshold.
-- Identify proof dependencies and distinguish computation from the mathematical argument.
-- Release the existing partial formalization with its precise scope, dependencies, and reproducible verification instructions.
-- Track the remaining finite range separately from the large-$N$ theorem.
-
-Questions, corrections, and independent checks are welcome through GitHub issues. Please identify the statement, proof step, or version under discussion.
+This repository claims no accepted complete solution, full public Lean proof of the original problem, award decision or automatic prize share. Eligibility and recognition are governed by the organizer's [award process](https://github.com/TheJustinSunPrize/awards/blob/main/docs/award-process.md) and [attribution policy](https://github.com/TheJustinSunPrize/awards/blob/main/docs/attribution.md).
 
 
