@@ -16,8 +16,11 @@ Here $t(N)$ is the maximum size of a family of distinct subsets of $[N]=\{1,\ldo
 
 [Read the English paper (PDF)](erdos272_arxiv_en.pdf)
 
-This repository currently publishes only the paper PDF and the English and Chinese READMEs. Code, computational certificates, technical source notes and Lean files are not distributed here. The paper still relies on electronic mathematical supplements and computational certificates, so the files currently public in this repository do not suffice to reproduce all computations or verify the entire chain of technical dependencies independently.
+The main branch contains the paper PDF and bilingual READMEs. Supplementary verification materials for the claimed result $N\ge4000$ are now publicly available in [Release materials-v1](https://github.com/killtoki123456/Erdos-Problem-272-An-Independent-Proof-with-an-Explicit-Threshold/releases/tag/materials-v1).
 
+Please download all three ZIP assets together: `erdos272_arxiv_source.zip`, `erdos272_full_proof_and_certificates.zip`, and `erdos272_review_handoff.zip`. Together they provide manuscript sources, mathematical supplements, computational certificates, checking programs, file maps, version hashes and reproduction instructions. The review handoff includes a corrected launcher addressing a directory-path issue in the original computational package; please follow its instructions.
+
+This research was developed independently of Li Xiang’s draft. These materials are provided for independent verification; their publication does not constitute completed external verification or full Lean certification. Partial Lean work remains unpublished.
 ## Independent research declaration
 
 **I declare that I conducted and completed this research independently, without research dependence on Li Xiang's draft. That draft was not the source of my arguments or threshold improvements, and this research is not a continuation, adaptation or joint development of it.** Citations to that draft serve only to describe the publicly reported scope of concurrent work.
