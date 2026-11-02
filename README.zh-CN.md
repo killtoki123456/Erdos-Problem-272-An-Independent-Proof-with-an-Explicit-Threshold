@@ -16,7 +16,11 @@ $$
 
 [阅读英文论文（PDF）](erdos272_arxiv_en.pdf)
 
-本仓库当前仅公开论文 PDF 和中英文 README。代码、计算证书、技术原文及 Lean 文件不随本仓库公开。论文仍引用电子数学补充和计算证书，因此当前公开文件尚不足以让读者独立复现全部计算并核对完整技术依赖。
+主分支保留论文 PDF 和中英文 README。关于论文所主张的 $N\ge4000$ 结果，核验资料现已通过 [Release materials-v1](https://github.com/killtoki123456/Erdos-Problem-272-An-Independent-Proof-with-an-Explicit-Threshold/releases/tag/materials-v1) 公开。
+
+请配套下载三个附件：`erdos272_arxiv_source.zip`、`erdos272_full_proof_and_certificates.zip` 和 `erdos272_review_handoff.zip`。资料包含论文源文件、数学补充、计算证书、检查程序、文件索引、版本校验值及复现说明。核验交接包提供了修正原计算包目录路径问题的启动程序，复现时请遵循其中说明。
+
+本研究独立于 Li Xiang 的草稿完成。上述资料供读者独立核验；公开资料不等于已经完成外部核验或完整 Lean 认证。已有的部分 Lean 工作仍未公开。
 
 ## 独立研究声明
 
