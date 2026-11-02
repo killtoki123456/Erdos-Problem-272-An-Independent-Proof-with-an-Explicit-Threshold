@@ -60,6 +60,6 @@ Lean形式化已经完成了一部分，尚未完成的项目仍属于进行中�
 
 本工作对应 [JSP-000233](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0201-0300.md#JSP-000233)，提供原问题的阶段性研究结果。欢迎对论文提出具体问题、参与剩余参数的研究、独立复核及形式化工作。
 
-若后续完整解答或参奖提交实质依赖本人的结果，请引用具体命题与固定版本，说明本人、此前作者及其他参与者各自的实际贡献，并通过GitHub Issue与我联系。我希望共同准确记录贡献，并就符合条件的贡献讨论未来联合申请孙宇晨奖的参与机会。联合申请角色、署名及拟议奖金分配，应事先依据实际贡献和适用规则明确讨论。
+**若后续完整解答或参奖提交实质依赖本人的结果，请引用具体命题与固定版本，说明本人、此前作者及其他参与者各自的实际贡献，并通过GitHub Issue与我联系。我希望共同准确记录贡献，并就符合条件的贡献讨论未来联合申请孙宇晨奖的参与机会。联合申请角色、署名及拟议奖金分配，应事先依据实际贡献和适用规则明确讨论。**
 
 本仓库不宣称已有获接受的完整解答、原题的完整公开Lean证明、获奖决定或自动分奖权。申请资格与贡献认定依主办方的[申请流程](https://github.com/TheJustinSunPrize/awards/blob/main/docs/award-process.md)及[归属规则](https://github.com/TheJustinSunPrize/awards/blob/main/docs/attribution.md)处理。
